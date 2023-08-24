@@ -114,8 +114,6 @@ header {
 }
 
 /* About */
-.about {
-}
 .about__wrapper {
   text-align: center;
   @include flex($direct: column, $gap: 40px);
@@ -125,6 +123,18 @@ header {
   }
 }
 
+/* Technologies */
+.tech__wrapper {
+  @include flex($direct: column, $gap: 40px);
+  padding: 100px calc(5vw + 20px) 0;
+}
+.technologies {
+  @include flex($gap: 30px,$wrap: wrap);
+  img{
+    width: 100px;
+    height: 100px;
+  }
+}
 
 
 
