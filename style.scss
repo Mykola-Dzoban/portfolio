@@ -1,6 +1,12 @@
 @import url("https://fonts.cdnfonts.com/css/thegoodmonolith");
-@import url('https://fonts.cdnfonts.com/css/montserrat');
-@mixin flex($direct: row, $align: center, $justify: center, $wrap: no-wrap, $gap: 0) {
+@import url("https://fonts.cdnfonts.com/css/montserrat");
+@mixin flex(
+  $direct: row,
+  $align: center,
+  $justify: center,
+  $wrap: no-wrap,
+  $gap: 0
+) {
   display: flex;
   flex-direction: $direct;
   align-items: $align;
@@ -20,7 +26,13 @@
   margin: 0;
   box-sizing: border-box;
   // font-family: "TheGoodMonolith", sans-serif;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background: url(./img/background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .container {
   margin: 0 auto;
@@ -33,19 +45,76 @@ footer {
 }
 a {
   text-decoration: none;
-  @include font(22px, 600, #E9ECEF);
+  @include font(22px, 600, #e9ecef);
 }
 ul {
-  @include flex($justify: start, $gap:30px);
+  @include flex($justify: start, $gap: 30px);
   list-style: none;
   padding: 0;
 }
 
+/* Hamburger */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  width: fit-content;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  border-radius: 5px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+}
+.nav-link {
+  transition: 0.7s ease;
+}
+
 /* Header */
-header{
-  background: #343A40;
+header {
+  background: #343a40;
   padding: 17px 0;
 }
-.header__wrapper{
-  padding-left: 117px;
+.header__wrapper {
+  padding-left: calc(5vw + 20px);
+  
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #343a40;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .nav-item {
+    margin: 16px 0;
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+  body.noscroll {
+    overflow: hidden;
+  }
 }
