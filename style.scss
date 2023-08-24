@@ -80,8 +80,50 @@ header {
 }
 .header__wrapper {
   padding-left: calc(5vw + 20px);
-  
 }
+
+/* Main */
+.main {
+}
+.main__wrapper {
+  @include flex($justify: start, $gap: calc(10vw + 20px));
+  padding: calc(20vh + 20px) calc(5vw + 20px);
+}
+.main-text {
+  @include flex($direct:column, $align:start, $justify: center, $gap: 18px);
+  h1{
+    @include font(50px, 700, #212529);
+  }
+  p{
+    @include font(40px, 600, #212529);
+  }
+}
+.text-name {
+  color: #580055;
+}
+.text-profession {
+  color: #AE9EFF;
+}
+.main-image {
+  img{
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive */
 @media (max-width: 991px) {
@@ -116,5 +158,26 @@ header {
   }
   body.noscroll {
     overflow: hidden;
+  }
+
+  .main__wrapper {
+    @include flex($direct: column, $justify: start, $gap: calc(10vw + 20px));
+    padding: calc(5 vh + 20px) calc(5vw + 20px);
+  }
+  .main-text {
+    text-align: center;
+    @include flex($direct:column, $align:center, $justify: center, $gap: 30px);
+    h1{
+      @include font(45px, 700, #212529);
+    }
+    p{
+      @include font(35px, 600, #212529);
+    }
+  }
+  .main-image {
+    img{
+      width: 300px;
+      height: 300px;
+    }
   }
 }
