@@ -52,6 +52,9 @@ ul {
   list-style: none;
   padding: 0;
 }
+h2{
+  @include font(38px, 600, #000);
+}
 
 /* Hamburger */
 .hamburger {
@@ -83,11 +86,9 @@ header {
 }
 
 /* Main */
-.main {
-}
 .main__wrapper {
   @include flex($justify: start, $gap: calc(10vw + 20px));
-  padding: calc(20vh + 20px) calc(5vw + 20px);
+  padding: calc(25vh + 20px) calc(5vw + 20px);
 }
 .main-text {
   @include flex($direct:column, $align:start, $justify: center, $gap: 18px);
@@ -112,6 +113,17 @@ header {
   }
 }
 
+/* About */
+.about {
+}
+.about__wrapper {
+  text-align: center;
+  @include flex($direct: column, $gap: 40px);
+  padding: 0 calc(5vw + 20px);
+  p{
+    @include font(22px, 400, #000);
+  }
+}
 
 
 
@@ -160,9 +172,13 @@ header {
     overflow: hidden;
   }
 
+  h2{
+    @include font(34px, 600, #000);
+  }
+  /* Main */
   .main__wrapper {
     @include flex($direct: column, $justify: start, $gap: calc(10vw + 20px));
-    padding: calc(5 vh + 20px) calc(5vw + 20px);
+    padding: calc(5vh + 20px) calc(5vw + 20px);
   }
   .main-text {
     text-align: center;
@@ -178,6 +194,12 @@ header {
     img{
       width: 300px;
       height: 300px;
+    }
+  }
+  /* About */
+  .about__wrapper {
+    p{
+      @include font(20px, 400, #000);
     }
   }
 }
