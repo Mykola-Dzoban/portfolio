@@ -22,15 +22,16 @@
   line-height: normal;
 }
 
-* {
+html{
   scroll-behavior: smooth; 
+}
+* {
   margin: 0;
   box-sizing: border-box;
   // font-family: "TheGoodMonolith", sans-serif;
   font-family: "Montserrat", sans-serif;
 }
 body {
-  scroll-behavior: smooth; 
   background: url(./img/background.png);
   background-position: center;
   background-repeat: no-repeat;
